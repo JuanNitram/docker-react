@@ -12,6 +12,7 @@ script:
 
 deploy:
     provider: elasticbeanstalk
+    edge: true
     access_key_id:
         secure: "AKIASZBR5TY5VIFAGZEL"
     secret_access_key:
