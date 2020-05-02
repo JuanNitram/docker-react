@@ -6,17 +6,14 @@ services:
 
 before_install:
     - docker build -t juannitram/docker-react -f Dockerfile.dev .
+    - openssl aes-256-cbc -K $encrypted_2fd045226a67_key -iv $encrypted_2fd045226a67_iv
+    -in client-secret.json.enc -out client-secret.json -d
 
 script:
     - docker run -e CI=true juannitram/docker-react npm run test
 
 deploy:
-    provider: elasticbeanstalk
-    access_key_id:
-        secure: "AKIASZBR5TY57TFJIWQ3"
-    secret_access_key:
-        secure: "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"
-    region: "sa-east-1"
-    app: "docker-react"
-    env: "DockerReact-env"
-    bucket_name: "elasticbeanstalk-sa-east-1-191230746171"
+    provider: gae
+    keyfile: "client-secret.json"
+    project: "vm-server-instance"
+    on: master
