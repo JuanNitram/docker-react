@@ -13,5 +13,5 @@ script:
 deploy:
     provider: script
     script:
-        - ssh deploy@34.69.229.232 | echo `g!++;4&6;nPDv"V
+        - ssh deploy@34.69.229.232 | echo ^`g!++^;4^&6;nPDv"V
     
