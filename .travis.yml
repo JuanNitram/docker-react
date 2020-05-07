@@ -13,5 +13,6 @@ script:
 deploy:
     provider: script
     script:
-        - ssh -o "StrictHostKeyChecking no" deploy@34.69.229.232 | echo $SERVER_PASSWORD | echo yes
+        - sudo apt-get install sshpass
+        - sshpass -p $SERVER_PASSWORD ssh -o "StrictHostKeyChecking no" deploy@34.69.229.232 | echo yes
     
