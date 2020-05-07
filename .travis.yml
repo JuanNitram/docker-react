@@ -14,5 +14,6 @@ script:
 deploy:
     provider: script
     script:
-        - sshpass -p $SERVER_PASSWORD ssh -o "StrictHostKeyChecking no" deploy@34.69.229.232 | echo yes
+        - sshpass -p $SERVER_PASSWORD ssh -o "StrictHostKeyChecking no" deploy@34.69.229.232
+        - who
     
