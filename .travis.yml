@@ -13,5 +13,5 @@ script:
 deploy:
     provider: script
     script:
-        - ssh deploy@34.69.229.232 | echo $SERVER_PASSWORD | echo yes
+        - ssh -o "StrictHostKeyChecking no" deploy@34.69.229.232 | echo $SERVER_PASSWORD | echo yes
     
